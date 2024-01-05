@@ -1,0 +1,41 @@
+.site {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    font-size: 13px;
+}
+
+img {
+    max-width: 30%;
+}
+
+.campo:nth-child(2) {
+    margin: 0;
+}
+
+@media screen and (min-width: 700px) {
+    .site {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .site {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .site {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .site {
+        width: 20%;
+    }
+}

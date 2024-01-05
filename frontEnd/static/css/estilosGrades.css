@@ -1,0 +1,132 @@
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 100%;
+}
+
+.cardBody {
+    align-items: center;
+    display: block;
+    justify-content: center;
+    width: 100%;
+}
+
+.cardTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+
+.cardText {
+    width: 80%;
+    margin: auto;
+    padding: 0.5em;
+    border-bottom: 1px solid gray;
+}
+
+.cardText p {
+    margin: 0;
+}
+
+.cardFooter {
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: end;
+}
+
+.btCard {
+    background: none;
+    border: 3px solid;
+    color: rgb(11, 109, 236);
+    height: 176px;
+    padding: 0.5em;
+    width: 100%;
+}
+
+.btCard i {
+    width: 100%;
+}
+
+.btCard:hover {
+    color: white;
+    background: rgb(11, 109, 236);
+    transition: all 0.7s;
+}
+
+.grid{
+    overflow-y: scroll;
+    background: rgb(214, 214, 214);
+    margin: 0.5em 0em;
+    padding: 0.5em;
+    height: 600px;
+}
+
+.btNone { 
+    margin: 0em 0.25em;
+    font-size: 20px;
+    background: none;
+    border: none;
+}
+
+.float  {
+    margin: 0;
+    width: 50%;
+    float: left;
+}
+
+.item {
+    background: white;
+    margin: 0.5em 0;
+}
+
+@media screen and (min-width: 700px) {
+    .card {
+        float: left;
+        margin: 0.5em 0.5%;
+        width: 49%;
+    }
+
+    .item article {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .listForm{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 0.5em;
+    }
+
+    .card {
+        margin: 0.5em 0.5%;
+        width: 24%;
+    }
+
+    .btCard {
+        height: 176.667px;
+    }
+
+    .grid {
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .btCard {
+        height: 177.6px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .site {
+        width: 65%;
+    }
+
+    .grid {
+        height: 550px;
+    }
+}

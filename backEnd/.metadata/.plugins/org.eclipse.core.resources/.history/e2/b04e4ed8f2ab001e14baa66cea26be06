@@ -1,0 +1,7 @@
+package com.br.fatec.AGIS.service;
+
+@Service
+public class DataService {
+	@Autowired
+	private DataRepository dataRepository
+}

@@ -1,0 +1,32 @@
+REQUISITOS SECRETÁRIA
+- RF montar grade
+ --vizualizar grade
+ --editar grade
+ --inserir turmas
+ --atualizar turmas
+ --definir horário
+ --selecionar professor
+
+- RF manter disciplinas
+ --inserir disciplinas
+ --atualizar disciplinas
+ --vizualizar disciplinas
+
+- RF manter cursos
+ --inserir cursos
+ --atualizar cursos
+ --vizualizar cursos
+
+- RF manter professores
+ -- inserir professor
+ -- atualizar professor
+ -- vizualizar professor
+- RF inserir datas no caléndario
+
+-- Não tem ainda
+- RF matricular aluno
+- RF vizualizar solicitações
+
+REQUISITOS SECRETÁRIA
+-RF vizualizar turmas
+-RF vizualizar histórico

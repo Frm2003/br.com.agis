@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Montar Grade</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../../../static/css/estilosPadroes.css">
+    <link rel="stylesheet" href="../../../static/css/estilosForms.css">
+	<link rel="stylesheet" href="../../../static/css/estilosTabelas.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="../../../static/scripts/tableAdjust.js"></script>
+	<script src="../../../static/scripts/formGrade.js"></script>
+	<script src="../../static/scripts/navsLoad.js"></script>
+</head>
+
+<body onload="loadNav(), loadTable()">
+    <nav></nav>
+	<div class="site">
+		<button class="btn btn-primary" style="margin-bottom: 0.5em;">Voltar</button>
+		<div class="aling">
+			<h2>Montar Grade</h2>
+			<form class="crudForm col">
+				<div class="campos campo">
+					<select>
+						<option>Selecione o curso</option>
+					</select>
+				</div>
+				<button type="submit" class="btForm">Buscar</button>
+			</form>
+			<div class="col">
+				<div class="section">
+					<p>Curso</p>
+					<p>Semestre</p>
+					<p>Ano: 2023</p>
+				</div>
+				<div class="alingBt">
+					<button class="btForm btMin" onclick="criaCampos()"><i class="fa-solid fa-plus"></i></button>
+					<button class="btForm btMin" onclick="deletaCampos()"><i class="fa-solid fa-minus"></i></button>
+				</div>
+				<form>
+					<div class="divTable">
+						<table>
+							<thead>
+								<tr>
+									<th>
+										<div>Codigo</div>
+									</th>
+									<th>
+										<div>Horario Início</div>
+									</th>
+									<th>
+										<div>Horaria Fim</div>
+									</th>
+									<th>
+										<div>Dia da Semana</div>
+									</th>
+									<th>
+										<div>Disciplina</div>
+									</th>
+									<th>
+										<div>Professor</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody id="tbody">
+
+							</tbody>
+						</table>
+					</div>
+					<button type="submit" class="btForm" style="margin-top: 0.5em">Salvar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

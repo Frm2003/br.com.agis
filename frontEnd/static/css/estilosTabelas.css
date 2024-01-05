@@ -1,0 +1,49 @@
+.divTable {
+    background: rgb(214, 214, 214);
+    overflow-x: scroll;
+    padding: 0.5em;
+    height: 180px;
+}
+
+table div {
+    align-items: center;
+    display: flex;
+    height: 45px;
+    justify-content: center;
+    margin: 0.15em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+table {
+    width: 500px;
+    overflow-y: scroll;
+}
+
+table thead div {
+    background: white;
+    font-size: 18px;
+}
+
+table tbody div {
+    background: rgb(228, 228, 228);
+    font-size: 15px;
+}
+
+@media screen and (min-width: 800px) {
+    .divTable {
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .divTable {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .divTable {
+        height: 600px;
+    }
+}

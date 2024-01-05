@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>editar grade</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../../../static/css/estilosPadroes.css">
+    <link rel="stylesheet" href="../../../static/css/estilosForms.css">
+	<link rel="stylesheet" href="../../../static/css/estilosTabelas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../../../static/scripts/tableAdjust.js"></script>
+    <script src="../../../static/scripts/formGrade.js"></script>
+    <script src="../../static/scripts/navsLoad.js"></script>
+</head>
+
+<body onload="loadNav(), loadTable()">
+    <nav></nav>
+    <div class="site">
+        <button class="btn btn-primary" style="margin-bottom: 0.5em;">Voltar</button>
+        <div class="aling">
+            <h2>Editar grade</h2>
+            <form class="crudForm col">
+                <div class="campos">
+                    <div class="campo">
+                        <label>Horario Início</label>
+                        <select>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Horaria Fim</label>
+                        <select>
+
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Dia da Semana</label>
+                        <select>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Disciplina</label>
+                        <select>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Professor</label>
+                        <select>
+                        </select>
+                    </div>
+                </div>
+                <div class="alingBts">
+                    <button type="submit" class="btForm">Nova T.</button>
+                    <button type="submit" class="btForm">Atualizar</button>
+                </div>
+            </form>
+            <div class="col">
+                <div class="divTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div>Cod</div>
+                                </th>
+                                <th>
+                                    <div>Horario Início</div>
+                                </th>
+                                <th>
+                                    <div>Horaria Fim</div>
+                                </th>
+                                <th>
+                                    <div>Dia da Semana</div>
+                                </th>
+                                <th>
+                                    <div>Disciplina</div>
+                                </th>
+                                <th>
+                                    <div>Professor</div>
+                                </th>
+                                <th colspan="2">
+                                    <div>Ações</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>1</div>
+                                </td>
+                                <td>
+                                    <div>13:00</div>
+                                </td>
+                                <td>
+                                    <div>16:30</div>
+                                </td>
+                                <td>
+                                    <div>Segunda</div>
+                                </td>
+                                <td>
+                                    <div>Inglês I</div>
+                                </td>
+                                <td>
+                                    <div>Prof 1</div>
+                                </td>
+                                <td>
+                                    <div><button type="submit" class="btForm btTable">Selecionar</button></div>
+                                </td>
+                                <td>
+                                    <div><button type="submit" class="btForm btTable">Remover</button></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
