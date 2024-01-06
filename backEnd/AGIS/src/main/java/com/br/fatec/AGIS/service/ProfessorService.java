@@ -1,6 +1,7 @@
 package com.br.fatec.AGIS.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,15 @@ public class ProfessorService {
 		return professorRepository.findAll();
 	}
 	
+	public Professor selectId(Long id) throws Exception {
+		Optional<Professor> professor = professorRepository.findById(id);
+		if (professor.isEmpty()) {
+			throw new Exception("Curso não registrado");
+		}
+
+		return professor.get();
+	}
+	
 	public Professor insert(ProfessorDto professorDto) {
 		var professorModel = new Professor();
 		Usuario user = new Usuario();
@@ -34,5 +44,17 @@ public class ProfessorService {
 		professorModel.setUsuario(user);
 		
 		return professorRepository.save(professorModel);
+	}
+	
+	public Professor delete(Long id) throws Exception {
+		Optional<Professor> professor = professorRepository.findById(id);
+		if (professor.isEmpty()) {
+			throw new Exception("Curso não registrado");
+		}
+
+		var professorModel = professor.get();
+		professorRepository.delete(professorModel);
+
+		return professorModel;
 	}
 }

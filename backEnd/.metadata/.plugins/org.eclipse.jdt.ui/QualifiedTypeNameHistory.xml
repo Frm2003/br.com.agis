@@ -14,7 +14,6 @@
     <fullyQualifiedTypeName name="jakarta.persistence.IdClass"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Embeddable"/>
     <fullyQualifiedTypeName name="com.br.fatec.AGIS.model.pk.MatriculaPk"/>
-    <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="com.br.fatec.AGIS.model.pk.ChamadaPk"/>
     <fullyQualifiedTypeName name="com.br.fatec.AGIS.model.GradeCurricular"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
@@ -38,9 +37,11 @@
     <fullyQualifiedTypeName name="com.br.fatec.AGIS.repository.DisciplinaRepository"/>
     <fullyQualifiedTypeName name="com.br.fatec.AGIS.service.DisciplinaService"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="jakarta.validation.constraints.NotBlank"/>
-    <fullyQualifiedTypeName name="jakarta.validation.constraints.NotNull"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="com.br.fatec.AGIS.model.Data"/>
+    <fullyQualifiedTypeName name="jakarta.validation.constraints.NotBlank"/>
+    <fullyQualifiedTypeName name="jakarta.validation.constraints.NotNull"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.br.fatec.AGIS.dto.ProfessorDto"/>
 </qualifiedTypeNameHistroy>
