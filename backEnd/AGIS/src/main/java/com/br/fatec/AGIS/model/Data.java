@@ -27,7 +27,7 @@ public class Data {
 	@Column(nullable = false, length = 100)
 	private String descricao;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "eh_feriado")
 	private boolean ehFeriado;
 	
 	@Column(nullable = false)

@@ -44,7 +44,7 @@ function selectAll() {
                                 icone.setAttribute('class', 'fa-solid fa-pen-to-square')
                                 button.insertAdjacentElement('beforeend', icone)
                             } else {
-                                button.setAttribute('onclick', `deleteById(${data[i][key]})`)
+                                button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/datas', ${data[i][key]})`)
                                 icone.setAttribute('class', 'fa-solid fa-trash')
                                 button.insertAdjacentElement('beforeend', icone)
                             }
@@ -151,39 +151,3 @@ function update() {
         });
 }
 
-function deleteById(cod) {
-    const url = `http://localhost:8080/AGIS/datas/${cod}`
-
-    const configuracaoRequisicao = {
-        method: 'DELETE',
-    };
-
-    fetch(url, configuracaoRequisicao)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`)
-            }
-            return response.json()
-        })
-        .then(data => {
-            console.log(data)
-            removeTable()
-            selectAll()
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-        });
-}
-
-function removeTable() {
-    let trs = document.querySelectorAll("tbody tr")
-    trs.forEach(tr => { tr.remove() })
-}
-
-function limpaCampos() {
-    let campos = document.querySelectorAll('input[name]')
-    campos.forEach(t => { t.value = '' })
-
-    let selects = document.querySelectorAll('select')
-    selects.forEach(s => { s.value = 'default' })
-}

@@ -43,6 +43,6 @@ public class Matricula {
 	@Column(nullable = false, length = 20)
 	private String situacao;
 	
-	@Column(nullable = false, precision = 3, scale = 2)
+	@Column(nullable = true, name = "nota_final", precision = 3, scale = 2)
 	private BigDecimal notaFinal;
 }

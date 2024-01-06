@@ -36,6 +36,6 @@ public class Chamada {
 	@Column(nullable = false, columnDefinition = "DATE")
 	private LocalDate dataChamada;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "qtd_faltas")
 	private int qtdFaltas;
 }

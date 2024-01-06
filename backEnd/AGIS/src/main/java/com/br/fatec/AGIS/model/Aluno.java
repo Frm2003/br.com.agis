@@ -23,29 +23,29 @@ public class Aluno {
 	@Column(nullable = false, unique = true, length = 15)
 	private String ra;
 	
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, name = "nome_social", length = 100)
 	private String nomeSocial;
 	
-	@Column(nullable = false, columnDefinition = "DATE")
+	@Column(nullable = false, name = "data_conc_2grau", columnDefinition = "DATE")
 	private LocalDate dataConc2grau;
 	
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, name = "inst_conc_2grau", length = 100)
 	private String instConc2grau;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "posicao_vestibular")
 	private int ptVestibular;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "pontuacao_vestibular")
 	private int posVestibular;
 	
-	@Column(nullable = false, columnDefinition = "DATE")
+	@Column(nullable = false, name = "data_matricula", columnDefinition = "DATE")
 	private LocalDate dataMatricula;
 
-	@Column(nullable = false, columnDefinition = "DATE")
+	@Column(nullable = false, name = "data_limite_matricula", columnDefinition = "DATE")
 	private LocalDate dataLimiteMatricula;
 	
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Curso.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codCurso")
+	@JoinColumn(nullable = false, name = "cod_curso")
 	private Curso curso;
 	
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = Usuario.class, fetch = FetchType.LAZY)

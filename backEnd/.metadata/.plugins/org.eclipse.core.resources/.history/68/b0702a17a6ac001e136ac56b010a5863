@@ -1,0 +1,35 @@
+package com.br.fatec.AGIS.model;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
+
+@lombok.Data
+@Entity
+@Table
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Usuario {
+	@Id
+	@Column(nullable = false, unique = true, length = 11)
+	protected String cpf;
+	
+	@Column(nullable = false, length = 100)
+	protected String nome;
+	
+	@Column(columnDefinition = "DATE")
+	protected LocalDate dataNasc;
+	
+	@Column(nullable = false, length = 30)
+	protected String emailPessoal;
+	
+	@Column(nullable = false, length = 30)
+	protected String emailCorp;	
+	
+	@Column(nullable = false, length = 20)
+	private String situacao;
+}

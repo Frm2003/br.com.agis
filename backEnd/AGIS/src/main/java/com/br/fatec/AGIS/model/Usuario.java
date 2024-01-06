@@ -21,13 +21,13 @@ public class Usuario {
 	@Column(nullable = false, length = 100)
 	protected String nome;
 	
-	@Column(columnDefinition = "DATE")
+	@Column(nullable = false, name = "data_nasc", columnDefinition = "DATE")
 	protected LocalDate dataNasc;
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, name = "email_pessoal", length = 30)
 	protected String emailPessoal;
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, name = "email_corp", length = 30)
 	protected String emailCorp;	
 	
 	@Column(nullable = false, length = 20)

@@ -31,7 +31,7 @@ public class Disciplina {
 	@Column(nullable = false, length = 100)
 	private String nome;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "qtd_aulas")
 	private int qtdAulas; 
 	
 	@Column(nullable = false)
@@ -39,7 +39,7 @@ public class Disciplina {
 	
 	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.REMOVE, targetEntity = Curso.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codCurso")
+	@JoinColumn(nullable = false, name = "cod_curso")
 	private Curso curso;
 	
 	public Disciplina(DisciplinaDto disciplinaDto, Curso curso) {

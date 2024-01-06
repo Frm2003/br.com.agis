@@ -25,24 +25,24 @@ public class Turma {
 	@Column(nullable = false)
 	private Long cod;
 	
-	@Column(nullable = false, columnDefinition = "TIME")
+	@Column(nullable = false, name = "horario_inicio", columnDefinition = "TIME")
 	private Time horarioInicio;
 	
-	@Column(nullable = false, columnDefinition = "TIME")
+	@Column(nullable = false, name = "horario_fim", columnDefinition = "TIME")
 	private Time horarioFim;
 	
-	@Column(nullable = false, length = 20)
+	@Column(nullable = false, name = "dia_da_semana", length = 20)
 	private String diaDaSemana;
 	
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Disciplina.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codDisciplina")
+	@JoinColumn(nullable = false, name = "cod_disciplina")
 	private Disciplina disciplina;
 	
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Professor.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codProfessor")
+	@JoinColumn(nullable = false, name = "cod_professor")
 	private Professor professor;
 	
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = GradeCurricular.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codGrade")
+	@JoinColumn(nullable = false, name = "cod_grade")
 	private GradeCurricular gradeCurricular;
 }

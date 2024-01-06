@@ -30,6 +30,6 @@ public class GradeCurricular {
 	private int semestre; 
 	
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Curso.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codCurso")
+	@JoinColumn(nullable = false, name = "cod_curso")
 	private Curso curso;
 }
