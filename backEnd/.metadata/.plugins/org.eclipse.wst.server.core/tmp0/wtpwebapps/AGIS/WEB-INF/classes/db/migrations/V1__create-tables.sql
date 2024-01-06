@@ -25,7 +25,7 @@ create table GradeCurricular(
 )
 GO
 create table Usuario(
-	cpf varchar(11) primary key NOT NULL,
+	cpf varchar(11) PRIMARY KEY NOT NULL,
 	data_nasc date NOT NULL,
 	email_corp varchar(30) NOT NULL,
 	email_pessoal varchar(30) NOT NULL,

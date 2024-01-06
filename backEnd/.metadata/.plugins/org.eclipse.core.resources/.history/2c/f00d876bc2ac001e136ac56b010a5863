@@ -1,0 +1,19 @@
+package com.br.fatec.AGIS.controller;
+
+@RestController
+@RequestMapping("/professor")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
+public class ProfessorController {
+	@Autowired
+	private ProfessorService professorService;
+	
+	@GetMapping
+	public ResponseEntity<List<Usuario>> getAll() {
+		return ResponseEntity.status(HttpStatus.OK).body(professorService.selectAll());
+	}
+	
+	@PostMapping
+	public ResponseEntity<Professor> insert(@RequestBody @Valid ProfessorDto professorDto) {
+		return ResponseEntity.status(HttpStatus.OK).body(professorService.insert(professorDto));
+	}
+}

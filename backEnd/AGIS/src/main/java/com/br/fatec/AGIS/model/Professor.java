@@ -1,5 +1,7 @@
 package com.br.fatec.AGIS.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,6 +28,7 @@ public class Professor{
 	@Column(nullable = false, length = 100)
 	protected String titulacao;
 	
+	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = Usuario.class, fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "cpf", unique = true)
 	private Usuario usuario;
