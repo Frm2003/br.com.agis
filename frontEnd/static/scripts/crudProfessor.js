@@ -48,7 +48,7 @@ function selectAll() {
                 for (let key in data[i]) {
                     if (key == 'cod') {
                         let icone = document.createElement('i')
-                        button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/curso',${data[i][key]})`)
+                        button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/professor',${data[i][key]})`)
                         icone.setAttribute('class', 'fa-solid fa-trash')
                         button.insertAdjacentElement('beforeend', icone)
                     }
@@ -69,7 +69,6 @@ function selectAll() {
 function insert() {
     fetch('http://localhost:8080/AGIS/professor', {
         method: "POST",
-        mode: "cors",
         body: JSON.stringify({
             cpf: document.querySelector('input[name="cpf"]').value,
             nome: document.querySelector('input[name="nome"]').value,
