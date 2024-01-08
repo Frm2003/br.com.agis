@@ -23,6 +23,10 @@ public class DisciplinaService {
 	public List<Disciplina> selectAll() {
 		return disciplinaRepository.findAll();
 	}
+	
+	public List<Disciplina> selectAllCurso(Long codCurso) {
+		return disciplinaRepository.selectAllCurso(codCurso);
+	}
 
 	public Disciplina selectId(Long cod) throws Exception {
 		Optional<Disciplina> disciplina = disciplinaRepository.findById(cod);

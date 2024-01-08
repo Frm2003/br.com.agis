@@ -1,0 +1,17 @@
+package com.br.fatec.AGIS.model.pk;
+
+import java.time.LocalDate;
+
+import com.br.fatec.AGIS.model.Aluno;
+import com.br.fatec.AGIS.model.Curso;
+import com.br.fatec.AGIS.model.Turma;
+
+import jakarta.persistence.Embeddable;
+
+@lombok.Data
+@Embeddable
+public class GradeCurricularPk {
+	private int ano; 
+	private int semestre; 
+	private Curso curso;
+}

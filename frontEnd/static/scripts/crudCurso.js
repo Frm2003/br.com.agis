@@ -92,7 +92,9 @@ function selectById(cod) {
 }
 
 function insert() {
-    fetch('http://localhost:8080/AGIS/curso', {
+    const url = `http://localhost:8080/AGIS/curso`
+
+    const configuracaoRequisicao = {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
@@ -104,8 +106,9 @@ function insert() {
         }),
         headers: {
             'Content-type': 'application/json',
-        },
-    })
+        }
+    }
+    fetch(url, configuracaoRequisicao)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`)
@@ -120,12 +123,14 @@ function insert() {
         })
         .catch(error => {
             console.error('Erro:', error)
-        });
+        })
 }
 
 function update() {
     let cod = document.querySelector('input[name="cod"]').value
-    fetch(`http://localhost:8080/AGIS/curso/${cod}`, {
+    const url = `http://localhost:8080/AGIS/curso/${cod}`
+
+    const configuracaoRequisicao = {
         method: "PUT",
         mode: "cors",
         body: JSON.stringify({
@@ -137,8 +142,10 @@ function update() {
         }),
         headers: {
             'Content-type': 'application/json'
-        },
-    })
+        }
+    }
+
+    fetch(url, configuracaoRequisicao)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`)

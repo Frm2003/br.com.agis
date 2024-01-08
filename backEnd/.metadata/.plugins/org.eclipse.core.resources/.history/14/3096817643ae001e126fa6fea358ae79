@@ -1,0 +1,12 @@
+package com.br.fatec.AGIS.dto;
+
+public record TurmaDto(
+		@NotNull Time horarioInicio,
+		@NotNull Time horarioFim,
+		@NotBlank String diaDaSemana,
+		@NotNull Long codDisciplina,
+		@NotNull Long codProfessor,
+		@NotNull Long codgradeCurricular
+) {
+
+}

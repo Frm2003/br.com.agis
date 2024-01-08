@@ -1,0 +1,8 @@
+package com.br.fatec.AGIS.service;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class GradeCurricularService {
+
+}

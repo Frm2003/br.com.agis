@@ -1,0 +1,6 @@
+package com.br.fatec.AGIS.service;
+
+@Service
+public class TurmaService {
+
+}

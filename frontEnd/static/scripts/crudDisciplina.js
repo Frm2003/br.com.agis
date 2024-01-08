@@ -55,7 +55,6 @@ function selectAll() {
             return response.json();
         })
         .then(data => {
-            selectCursos()
             let tbody = document.querySelector("tbody")
 
             for (let a = 0; a < data.length; a++) {
@@ -75,7 +74,7 @@ function selectAll() {
                     tr.insertAdjacentElement('beforeend', td)
                 }
 
-                for (let a = 0; a < 2; a++) {
+                for (let i = 0; i < 2; i++) {
                     let td = document.createElement('td')
                     let div = document.createElement('div')
                     let button = document.createElement('button')
@@ -83,15 +82,15 @@ function selectAll() {
                     button.setAttribute('class', 'btForm btTable')
                     button.setAttribute('style', 'width: 100%')
 
-                    for (let key in data[i]) {
+                    for (let key in data[a]) {
                         if (key == 'cod') {
                             let icone = document.createElement('i')
-                            if (a == 0) {
-                                button.setAttribute('onclick', `selectById(${data[i][key]})`)
+                            if (i == 0) {
+                                button.setAttribute('onclick', `selectById(${data[a][key]})`)
                                 icone.setAttribute('class', 'fa-solid fa-pen-to-square')
                                 button.insertAdjacentElement('beforeend', icone)
                             } else {
-                                button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/disciplina', ${data[i][key]})`)
+                                button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/disciplina', ${data[a][key]})`)
                                 icone.setAttribute('class', 'fa-solid fa-trash')
                                 button.insertAdjacentElement('beforeend', icone)
                             }
@@ -104,6 +103,7 @@ function selectAll() {
                 }
 
                 tbody.insertAdjacentElement('beforeend', tr)
+                selectCursos()
             }
         })
         .catch(error => {

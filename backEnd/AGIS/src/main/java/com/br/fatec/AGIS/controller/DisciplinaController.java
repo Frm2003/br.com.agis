@@ -42,6 +42,15 @@ public class DisciplinaController {
 		}
 	}
 	
+	@GetMapping("/curso/{cod}")
+	public ResponseEntity<Object> getAllCurso(@PathVariable(value = "cod") Long codCurso) {
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(disciplinaService.selectAllCurso(codCurso));
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+	}
+	
 	@PostMapping
 	public ResponseEntity<Disciplina> insert(@RequestBody @Valid DisciplinaDto disciplinaDto) {
 		return ResponseEntity.status(HttpStatus.OK).body(disciplinaService.insert(disciplinaDto));

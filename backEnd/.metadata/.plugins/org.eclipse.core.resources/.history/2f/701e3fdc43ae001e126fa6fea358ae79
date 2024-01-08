@@ -1,0 +1,24 @@
+package com.br.fatec.AGIS.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.br.fatec.AGIS.model.Turma;
+import com.br.fatec.AGIS.repository.DisciplinaRepository;
+import com.br.fatec.AGIS.repository.TurmaRepository;
+
+@Service
+public class TurmaService {
+	@Autowired
+	private DisciplinaRepository disciplinaRepository;
+	
+	@Autowired
+	private TurmaRepository turmaRepository;
+	
+	@Autowired
+	private TurmaRepository turmaRepository;
+	
+	public Turma insert() {
+		return null;
+	}
+}
