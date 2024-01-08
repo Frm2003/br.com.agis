@@ -1,15 +1,15 @@
 package com.br.fatec.AGIS.model;
 
 import com.br.fatec.AGIS.dto.GradeCurricularDto;
-import com.br.fatec.AGIS.model.pk.GradeCurricularPk;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
@@ -21,21 +21,21 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.JOINED)
-@IdClass(GradeCurricularPk.class)
 @NoArgsConstructor
 public class GradeCurricular {
 	@Id
-	@Column(nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long cod;
+	
+	@Column(nullable = false, unique = true)
 	private int ano; 
 	
-	@Id
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private int semestre; 
 	
-	@Id
 	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Curso.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "cod_curso")
+	@JoinColumn(nullable = false, name = "cod_curso", unique = true)
 	private Curso curso;
 
 	public GradeCurricular(GradeCurricularDto gradeCurricularDto, Curso curso) {

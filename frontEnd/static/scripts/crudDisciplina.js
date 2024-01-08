@@ -47,6 +47,8 @@ function selectAll() {
         },
     };
 
+    selectCursos()
+
     fetch(url, options)
         .then(response => {
             if (!response.ok) {
@@ -103,7 +105,6 @@ function selectAll() {
                 }
 
                 tbody.insertAdjacentElement('beforeend', tr)
-                selectCursos()
             }
         })
         .catch(error => {

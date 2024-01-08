@@ -5,35 +5,23 @@
     margin: 0.5em 0;
     width: 100%;
 }
-
-.cardBody {
-    align-items: center;
-    display: block;
-    justify-content: center;
-    width: 100%;
+.card h3 {
+    padding: 0.25em 0.3em;
 }
-
-.cardTitle {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5em;
-}
-
-.cardText {
-    width: 80%;
+.card article {
+    border-bottom: 1px solid black;
     margin: auto;
-    padding: 0.5em;
-    border-bottom: 1px solid gray;
+    padding: 0.5em 0em;
+    width: 80%;
 }
 
-.cardText p {
+.card article p {
     margin: 0;
 }
 
-.cardFooter {
-    margin: 0.5em 0;
-    display: flex;
-    justify-content: end;
+.alingBt{
+    margin: auto;
+    width: 80%;
 }
 
 .btCard {
