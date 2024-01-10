@@ -15,11 +15,13 @@ import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.NoArgsConstructor;
 
 @lombok.Data
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.JOINED)
+@NoArgsConstructor
 public class Turma {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,6 +59,16 @@ public class Turma {
 		this.disciplina = disciplina;
 		this.professor = professor;
 		this.gradeCurricular = gradeCurricular;
+	}
+	
+	public Turma(Turma turma, TurmaDto turmaDto, Disciplina disciplina, Professor professor) {
+		this.cod = turma.getCod();
+		this.horarioInicio = turmaDto.horarioInicio();
+		this.horarioFim = turmaDto.horarioFim();
+		this.diaDaSemana = turmaDto.diaDaSemana();
+		this.disciplina = disciplina;
+		this.professor = professor;
+		this.gradeCurricular = turma.getGradeCurricular();
 	}
 
 }

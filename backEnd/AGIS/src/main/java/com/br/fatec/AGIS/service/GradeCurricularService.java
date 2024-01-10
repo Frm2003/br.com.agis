@@ -24,6 +24,16 @@ public class GradeCurricularService {
 		return gradeCurricularRepository.findAll();
 	}
 	
+	public GradeCurricular selectById(Long cod) throws Exception {
+		Optional<GradeCurricular> gradeCurricular = gradeCurricularRepository.findById(cod);
+		
+		if (gradeCurricular.isEmpty()) {
+			throw new Exception("Disciplina não registrada");
+		}
+		
+		return gradeCurricular.get();
+	}
+	
 	public GradeCurricular insert(GradeCurricularDto gradeCurricularDto) {
 		Optional<Curso> curso = cursoRepository.findById(gradeCurricularDto.codCurso());
 		var gradeCurricularModel = new GradeCurricular(gradeCurricularDto, curso.get());

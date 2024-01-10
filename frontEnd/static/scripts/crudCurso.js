@@ -15,14 +15,14 @@ function selectAll() {
         .then(data => {
             let tbody = document.querySelector("tbody")
 
-            for (let i = 0; i < data.length; i++) {
+            data.forEach(d => {
                 let tr = document.createElement('tr')
 
-                for (let key in data[i]) {
+                for (let key in d) {
                     let td = document.createElement('td')
                     let div = document.createElement('div')
 
-                    div.textContent = data[i][key]
+                    div.textContent = d[key]
 
                     td.insertAdjacentElement('beforeend', div)
                     tr.insertAdjacentElement('beforeend', td)
@@ -36,15 +36,15 @@ function selectAll() {
                     button.setAttribute('class', 'btForm btTable')
                     button.setAttribute('style', 'width: 100%')
 
-                    for (let key in data[i]) {
+                    for (let key in d) {
                         if (key == 'cod') {
                             let icone = document.createElement('i')
                             if (a == 0) {
-                                button.setAttribute('onclick', `selectById(${data[i][key]})`)
+                                button.setAttribute('onclick', `selectById(${d[key]})`)
                                 icone.setAttribute('class', 'fa-solid fa-pen-to-square')
                                 button.insertAdjacentElement('beforeend', icone)
                             } else {
-                                button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/curso',${data[i][key]})`)
+                                button.setAttribute('onclick', `deleteById('http://localhost:8080/AGIS/curso',${d[key]})`)
                                 icone.setAttribute('class', 'fa-solid fa-trash')
                                 button.insertAdjacentElement('beforeend', icone)
                             }
@@ -57,7 +57,7 @@ function selectAll() {
                 }
 
                 tbody.insertAdjacentElement('beforeend', tr)
-            }
+            })
         })
         .catch(error => {
             console.error('Erro:', error)

@@ -27,15 +27,15 @@ public class GradeCurricular {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long cod;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private int ano; 
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private int semestre; 
 	
 	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Curso.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "cod_curso", unique = true)
+	@JoinColumn(nullable = false, name = "cod_curso")
 	private Curso curso;
 
 	public GradeCurricular(GradeCurricularDto gradeCurricularDto, Curso curso) {

@@ -58,7 +58,6 @@ public class DisciplinaController {
 	
 	@PutMapping("/{cod}")
 	public ResponseEntity<Object> update(@PathVariable(value = "cod") Long cod, @RequestBody @Valid DisciplinaDto disciplinaDto) {
-		System.out.println(cod + " - " + disciplinaDto);
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(disciplinaService.update(cod, disciplinaDto));
 		} catch (Exception e) {
