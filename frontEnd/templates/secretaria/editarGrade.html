@@ -5,9 +5,9 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>editar grade</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="../../../static/css/estilosPadroes.css">
-    <link rel="stylesheet" href="../../../static/css/estilosForms.css">
-	<link rel="stylesheet" href="../../../static/css/estilosTabelas.css">
+    <link rel="stylesheet" href="../../static/css/estilosPadroes.css">
+    <link rel="stylesheet" href="../../static/css/estilosForms.css">
+    <link rel="stylesheet" href="../../static/css/estilosTabelas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -16,14 +16,17 @@
         crossorigin="anonymous"></script>
     <script src="../../../static/scripts/configs/tableAdjust.js"></script>
     <script src="../../static/scripts/configs/navsLoad.js"></script>
-    <script src="../../static/scripts/crudGenericos.js"></script>
-    <script src="../../static/scripts/crudTurma.js"></script>
+    <script src="../../static/scripts/secretaria/crudGenericos.js"></script>
 </head>
 
-<body onload="loadNav(), loadTable(), selectAll(), criaSelects()">
+<body onload="loadNav(), loadTable()">
     <nav></nav>
     <div class="site">
-        <button class="btn btn-primary" style="margin-bottom: 0.5em;">Voltar</button>
+        <a href="visualizarGrade.html">
+            <button class="btn btn-primary" style="margin-bottom: 0.5em;">
+                Voltar
+            </button>
+        </a>
         <div class="aling">
             <h2>Editar grade</h2>
             <div class="crudForm col">
@@ -53,6 +56,9 @@
                                     <div>Disciplina</div>
                                 </th>
                                 <th>
+                                    <div>Qtd. Aula</div>
+                                </th>
+                                <th>
                                     <div>Professor</div>
                                 </th>
                                 <th colspan="2">
@@ -61,13 +67,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../../static/scripts/secretaria/crudTurma.js"></script>
 </body>
 
 </html>

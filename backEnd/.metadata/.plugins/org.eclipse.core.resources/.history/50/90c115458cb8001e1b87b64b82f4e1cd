@@ -1,0 +1,11 @@
+package com.br.fatec.AGIS.service;
+
+import org.springframework.stereotype.Service;
+
+import com.br.fatec.AGIS.repository.MatriculaRepository;
+
+@Service
+public class MatriculaService {
+	@Autowired
+	private MatriculaRepository
+}

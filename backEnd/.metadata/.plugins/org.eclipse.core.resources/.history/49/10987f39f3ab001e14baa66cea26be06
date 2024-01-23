@@ -1,9 +1,0 @@
-package com.br.fatec.AGIS.dto;
-
-import java.time.LocalDate;
-
-public record DataDto() {
-	@NotNull LocalDate data,
-	@NotBlank String descricao,
-	
-}

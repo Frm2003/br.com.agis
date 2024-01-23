@@ -1,0 +1,95 @@
+section {
+    background: rgb(214, 214, 214);
+    height: 670px;
+    padding: 0.5em;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.cartao {
+    background: rgb(235, 235, 235);
+    padding: 0.5em;
+    margin: 0.35em 0em;
+}
+
+.btCartao {
+    background: rgb(235, 235, 235);
+    padding: 0.5em;
+    height: 179.133px;
+    margin: 0.35em 0em;
+}
+
+.cardTitle {
+    width: 100%;
+}
+
+.cardContent {
+    overflow: hidden;
+}
+
+.cardContent div {
+    float: left;
+}
+
+.cardContent div p {
+    margin: 0.15em;
+}
+
+.btCartao button {
+    background: none;
+    border: 2px solid;
+    font-size: 45px;
+    color: rgb(11, 109, 236);
+    height: 100%;
+    width: 100%;
+}
+
+.btCartao button:hover {
+    background: rgb(11, 109, 236);
+    color: white;
+    transition: all 0.7s;
+}
+
+@media screen and (min-width: 1200px) {
+    .grid {
+        height: 475px;
+    }
+
+    .grid .cartao {
+        float: left;
+        margin: 0.5em 0.5%;
+        width: 24%;
+    }
+
+    .btCartao {
+        height: 184.8px;
+    }
+
+    .card h2 {
+        font-size: 25px;
+    }
+
+    .card p {
+        font-size: 17px;
+    }
+
+    .cardTitle {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cardContent div {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .grid {
+        height: 670px;
+    }
+
+    .grid .cartao {
+        margin: 0.5em 0.5%;
+        width: 19%;
+    }
+} 

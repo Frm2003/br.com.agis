@@ -24,12 +24,12 @@ import jakarta.persistence.Table;
 public class Chamada {
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Aluno.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "alunoRa")
+	@JoinColumn(nullable = false, name = "aluno_ra")
 	private Aluno aluno;
 	
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Turma.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codTurma")
+	@JoinColumn(nullable = false, name = "cod_turma")
 	private Turma turma;
 	
 	@Id

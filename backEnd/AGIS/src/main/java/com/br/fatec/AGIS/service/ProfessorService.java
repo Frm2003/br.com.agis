@@ -37,7 +37,7 @@ public class ProfessorService {
 		user.setNome(professorDto.nome());
 		user.setDataNasc(professorDto.dataNasc());
 		user.setEmailPessoal(professorDto.emailPessoal());
-		user.setEmailCorp("teste");
+		user.setEmailCorp("testeProf");
 		user.setSituacao("ativo");
 		
 		professorModel.setTitulacao(professorDto.titulacao());

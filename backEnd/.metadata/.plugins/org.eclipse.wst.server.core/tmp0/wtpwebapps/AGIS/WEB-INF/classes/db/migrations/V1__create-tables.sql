@@ -1,7 +1,7 @@
 create table Curso(
 	cod bigint identity(1, 1) primary key NOT NULL,
 	nome varchar(100) NOT NULL,
-	carga_horario int NOT NULL,
+	carga_horaria int NOT NULL,
 	sigla varchar(10) NOT NULL,
 	enade numeric(3, 2) NOT NULL,
 	turno varchar(10) NOT NULL
@@ -16,11 +16,11 @@ create table Disciplina(
 	foreign key (cod_curso) references Curso(cod),
 )
 GO
-create table GradeCurricular(
+create table Grade_Curricular(
 	cod bigint IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	ano int NOT NULL,
 	semestre int NOT NULL,
-	codCurso bigint NOT NULL,
+	cod_curso bigint NOT NULL,
 	foreign key (cod_curso) references Curso(cod),
 )
 GO

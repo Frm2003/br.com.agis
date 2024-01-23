@@ -1,0 +1,25 @@
+package com.br.fatec.AGIS.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.br.fatec.AGIS.dto.MatriculaDto;
+import com.br.fatec.AGIS.model.Matricula;
+import com.br.fatec.AGIS.repository.MatriculaRepository;
+
+@Service
+public class MatriculaService {
+	@Autowired
+	private MatriculaRepository matriculaRepository;
+	
+	public List<Matricula> selectAllByRa(String ra) {
+		return matriculaRepository.selectAllByRa(ra);
+	}
+	
+	public void dispensar(MatriculaDto matriculaDto) {
+		Optional<Matricula> matricula = matriculaRepository.findById(null);
+	}
+}

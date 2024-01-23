@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="../../../static/css/estilosPadroes.css">
     <link rel="stylesheet" href="../../../static/css/estilosForms.css">
-    <link rel="stylesheet" href="../../../static/css/estilosGrades.css">
+    <link rel="stylesheet" href="../../../static/css/estiloCard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -15,7 +15,8 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="../../static/scripts/configs/navsLoad.js"></script>
-    <script src="../../static/scripts/visualizarGrade.js"></script>
+    <script src="../../static/scripts/secretaria/crudGenericos.js"></script>
+    <script src="../../static/scripts/secretaria/visualizarGrade.js"></script>
 </head>
 
 <body onload="loadNav(), selectAll()">
@@ -23,20 +24,16 @@
     <div class="site">
         <div class="aling">
             <h2>Vizualizar Grades</h2>
-            <form class="section listForm">
-                <button><i class="fas fa-search"></i></button><input type="text" name="context">
-            </form>
-
-            <div class="grid">
-
-                <section class="card">
-                    <button class="btCard" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                        class="fa-solid fa-plus"></i></button>
-                </section>
-
-            </div>
+            <section class="grid">
+                <div class="overflow">
+                    <div class="cartao btCartao">
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -56,6 +53,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

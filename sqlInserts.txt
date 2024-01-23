@@ -1,0 +1,26 @@
+INSERT INTO Curso VALUES 
+(2800, 4.40, 'Analise e desenvolvimento de Sistemas', 'ADS', 'Tarde')
+GO
+INSERT INTO Disciplinas VALUES
+('Administração Geral', 4, 1, 1),
+('Arquitetura e Organização de Computadores', 4, 1, 1),
+('Algoritmos e Lógica de Programação', 4, 1, 1),
+('Laboratório de Hardware', 2, 1, 1),
+('Programação em Microinformática', 4, 1, 1),
+('Inglês I', 2, 1, 1),
+('Matemática Discreta', 4, 1, 1),
+('Contabilidade', 2, 2, 1)
+GO
+INSERT INTO Grade_Curricular VALUES 
+(2024, 1, 1)
+GO
+INSERT INTO Turma VALUES
+('Segunda', '13:00', '13:00', 4, 1, 1),
+('Segunda', '13:00', '13:00', 5, 1, 2),
+('Segunda', '13:00', '13:00', 6, 1, 4),
+('Segunda', '13:00', '13:00', 3, 1, 6),
+('Segunda', '13:00', '13:00', 8, 1, 8),
+('Segunda', '13:00', '13:00', 7, 1, 8),
+('Segunda', '13:00', '13:00', 1, 1, 3),
+('Segunda', '13:00', '13:00', 2, 1, 1)
+

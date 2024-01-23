@@ -2,6 +2,8 @@ package com.br.fatec.AGIS.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,10 +46,12 @@ public class Aluno {
 	@Column(nullable = false, name = "data_limite_matricula", columnDefinition = "DATE")
 	private LocalDate dataLimiteMatricula;
 	
+	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Curso.class, fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "cod_curso")
 	private Curso curso;
 	
+	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = Usuario.class, fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "cpf")
 	private Usuario usuario;

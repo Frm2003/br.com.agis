@@ -1,0 +1,16 @@
+package com.br.fatec.AGIS.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.br.fatec.AGIS.service.DisciplinaService;
+
+@RestController
+@RequestMapping("/aluno")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
+public class AlunoController {
+	@Autowired
+	private AlunoService disciplinaService;
+}

@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 
 @lombok.Data
 @Entity
-@Table
+@Table(name = "Grade_Curricular")
 @Inheritance(strategy = InheritanceType.JOINED)
 @NoArgsConstructor
 public class GradeCurricular {

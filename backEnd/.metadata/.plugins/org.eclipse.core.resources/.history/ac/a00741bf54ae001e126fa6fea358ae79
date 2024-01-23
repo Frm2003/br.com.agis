@@ -1,9 +1,0 @@
-package com.br.fatec.AGIS.model.pk;
-
-import com.br.fatec.AGIS.model.Curso;
-
-public class GradeCurricularPk {
-	private int ano; 
-	private int semestre; 
-	private Curso curso;
-}

@@ -3,6 +3,7 @@ package com.br.fatec.AGIS.model;
 import java.math.BigDecimal;
 
 import com.br.fatec.AGIS.model.pk.MatriculaPk;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -23,13 +24,15 @@ import jakarta.persistence.Table;
 @IdClass(MatriculaPk.class)
 public class Matricula {
 	@Id
+	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Aluno.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "alunoRa")
+	@JoinColumn(nullable = false, name = "aluno_ra")
 	private Aluno aluno;
 	
 	@Id
+	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Turma.class, fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false, name = "codTurma")
+	@JoinColumn(nullable = false, name = "cod_turma")
 	private Turma turma;
 	
 	@Id
