@@ -1,0 +1,16 @@
+package com.br.fatec.AGIS.repository;
+
+import java.time.LocalDate;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.br.fatec.AGIS.model.Data;
+
+@Repository
+public interface DataRepository extends JpaRepository<Data, Long> {
+	
+	@Query(value = "select data from Data where descricao = ''", nativeQuery = true)
+	LocalDate selectDataInicio();
+}

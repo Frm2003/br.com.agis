@@ -21,6 +21,27 @@
 </head>
 
 <body onload="loadNav(), selectByRa()">
+    <style>
+        @media screen and (min-width: 1200px) {
+            .cardTitle h3 {
+                font-size: 20px;
+                align-items: center;
+                display: flex;
+                height: 80px;
+            }
+        }
+
+        @media screen and (min-width: 1500px) {
+            .cartao {
+                height: 270px;
+            }
+
+            .cardTitle h3 {
+                font-size: 26px;
+                height: 105px;
+            }
+        }
+    </style>
     <nav></nav>
     <div class="site">
         <div class="aling">
@@ -109,7 +130,7 @@
                                 </article>
 
                                 <article id="infoFacul">
-                                    
+
                                 </article>
 
                             </div>
@@ -117,17 +138,32 @@
                     </div>
                     <div class="content s2">
                         <section>
-                            <div class="overflow">
-                                
+                            <div class="grid">
+
+                                <div class="overflow">
+                                </div>
+
                             </div>
                         </section>
                     </div>
-                    <div class="content">
+                    <div class="content s3">
                         <section>
                             <article>
-                                <h3>Trancar Matricula</h3>
-                                <p>Trancar matricula do aluno</p>
-                                <button class="btEdit">Trancar</button>
+                                <h3 style="border-bottom: 1px solid gray;">Trancar Matricula</h3>
+                                <div style="padding: 0.75em;">
+                                    <p style="margin: 0em;">Trancar matricula do aluno</p>
+                                    <button class="btForm">Trancar</button>
+                                </div>
+                                <h3 style="border-bottom: 1px solid gray;">Gerar Historico</h3>
+                                <div style="padding: 0.75em;">
+                                    <p style="margin: 0em;">Trancar matricula do aluno</p>
+                                    <button class="btForm">Trancar</button>
+                                </div>
+                                <h3 style="border-bottom: 1px solid gray;">Gerar Historico completo</h3>
+                                <div style="padding: 0.75em;">
+                                    <p style="margin: 0em;">Trancar matricula do aluno</p>
+                                    <button class="btForm">Trancar</button>
+                                </div>
                             </article>
                         </section>
                     </div>

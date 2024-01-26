@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>visualizar Turmas</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="../../../static/css/estilosPadroes.css">
+	<link rel="stylesheet" href="../../../static/css/estilosForms.css">
+	<link rel="stylesheet" href="../../../static/css/estiloCard.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="../../static/scripts/configs/navsLoad.js"></script>
+</head>
+
+<body onload="loadNavProf()">
+	<style>
+		@media screen and (min-width: 1200px) {
+			.cardTitle {
+				display: flex;
+			}
+			.cardTitle h3 {
+				font-size: 20px;
+				align-items: center;
+				display: flex;
+				height: 80px;
+			}
+		}
+
+		@media screen and (min-width: 1500px) {
+			.cartao {
+				height: 275px;
+			}
+
+			.cardTitle h3 {
+				font-size: 26px;
+				height: 105px;
+			}
+		}
+	</style>
+	<nav></nav>
+	<div class="site">
+		<div class="aling">
+			<h2>Suas Turmas</h2>
+			<section class="grid">
+				<div class="overflow">
+
+				</div>
+			</section>
+		</div>
+	</div>
+	<script src="../../static/scripts/professor/visualizarTurma.js"></script>
+</body>

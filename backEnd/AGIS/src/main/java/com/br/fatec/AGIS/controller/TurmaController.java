@@ -29,8 +29,13 @@ public class TurmaController {
 	private TurmaService turmaService;
 	
 	@GetMapping("/grade/{cod}")
-	public ResponseEntity<List<Turma>> getAllfromGrade(@PathVariable("cod") Long codGrade) {
-		return ResponseEntity.status(HttpStatus.OK).body(turmaService.selectAllfromGrade(codGrade));
+	public ResponseEntity<List<Turma>> getAllFromGrade(@PathVariable("cod") Long codGrade) {
+		return ResponseEntity.status(HttpStatus.OK).body(turmaService.selectAllFromGrade(codGrade));
+	}
+	
+	@GetMapping("/professor/{cod}")
+	public ResponseEntity<List<Turma>> getAllFromProf(@PathVariable("cod") Long codProf) {
+		return ResponseEntity.status(HttpStatus.OK).body(turmaService.selectAllFromProf(codProf));
 	}
 	
 	@GetMapping("/{cod}")

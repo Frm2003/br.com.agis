@@ -29,6 +29,10 @@ public class MatriculaService {
 	public List<Matricula> selectAllByRa(String ra) {
 		return matriculaRepository.selectAllByRa(ra);
 	}
+	
+	public List<Matricula> selectAllByCodTurma(Long codTurma) {
+		return matriculaRepository.selectAllByCodTurma(codTurma);
+	}
 
 	public Matricula dispensar(MatriculaDto matriculaDto) {
 		Optional<Aluno> aluno = alunoRepository.findById(matriculaDto.ra());

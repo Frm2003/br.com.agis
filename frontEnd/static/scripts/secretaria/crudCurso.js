@@ -3,7 +3,8 @@ function selectAll() {
 
     const configuracaoRequisicao = {
         method: 'GET',
-    };
+        mode: "cors"
+    }
 
     fetch(url, configuracaoRequisicao)
         .then(response => {

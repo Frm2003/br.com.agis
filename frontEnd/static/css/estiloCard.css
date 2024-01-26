@@ -72,16 +72,6 @@ section {
     .card p {
         font-size: 17px;
     }
-
-    .cardTitle {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cardContent div {
-        text-align: center;
-    }
 }
 @media screen and (min-width: 1500px) {
     .grid {

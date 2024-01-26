@@ -20,7 +20,12 @@ public class ProfessorService {
 		return professorRepository.findAll();
 	}
 	
-	public Professor selectId(Long id) throws Exception {
+	// PARTE DO MEIO DO SISTEMA DE "LOGIN"
+	public Professor selectByCpfAndSenha(String cpf, String senha) {
+		return professorRepository.selectByCpfAndSenha(cpf, senha);
+	}
+	
+	public Professor selectById(Long id) throws Exception {
 		Optional<Professor> professor = professorRepository.findById(id);
 		if (professor.isEmpty()) {
 			throw new Exception("Curso não registrado");
@@ -37,8 +42,11 @@ public class ProfessorService {
 		user.setNome(professorDto.nome());
 		user.setDataNasc(professorDto.dataNasc());
 		user.setEmailPessoal(professorDto.emailPessoal());
-		user.setEmailCorp("testeProf");
+		
+		user.setEmailCorp(geraEmailCorp(professorDto.nome()));
+		
 		user.setSituacao("ativo");
+		user.setSenha("123456");
 		
 		professorModel.setTitulacao(professorDto.titulacao());
 		professorModel.setUsuario(user);
@@ -56,5 +64,17 @@ public class ProfessorService {
 		professorRepository.delete(professorModel);
 
 		return professorModel;
+	}
+	
+	private String geraEmailCorp(String nome) {
+		String email = nome;
+		
+		for (int i = 0; i < 4; i++) {
+			email += (int) (Math.random() * 10);
+		}	
+		
+		email += "@agis.com";
+		
+		return email.trim();
 	}
 }

@@ -15,9 +15,8 @@ function selectAll() {
 
             document.querySelector('.section').innerHTML = `
                 <p>${data.nome}</p>
-                <p>${semestre}</p>
-                <p>${dataAtual.getFullYear()}</p>
-            `
+                <p id="semestre">${semestre}</p>
+                <p id="ano">${dataAtual.getFullYear()}</p>`
         })
         .catch(error => {
             console.error(error)
@@ -29,7 +28,7 @@ function insert() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-            codCurso: document.querySelector('#codCurso').value,
+            codCurso: localStorage.getItem('codCurso'),
             semestre: document.querySelector('#semestre').textContent,
             ano: document.querySelector('#ano').textContent
         }),

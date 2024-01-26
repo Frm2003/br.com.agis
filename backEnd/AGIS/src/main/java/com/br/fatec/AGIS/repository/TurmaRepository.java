@@ -13,5 +13,8 @@ import com.br.fatec.AGIS.model.Turma;
 public interface TurmaRepository extends JpaRepository<Turma, Long>{
 	
 	@Query(value = "select * from turma where cod_grade = ?", nativeQuery = true)
-	List<Turma> selectAllfromGrade(@Param("cod") Long cod);
+	List<Turma> selectAllFromGrade(@Param("cod") Long codGrade);
+	
+	@Query(value = "select * from turma where cod_professor = ?", nativeQuery = true)
+	List<Turma> selectAllFromProf(@Param("cod") Long codProf);
 }

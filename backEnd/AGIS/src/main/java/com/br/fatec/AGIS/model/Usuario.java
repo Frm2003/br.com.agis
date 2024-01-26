@@ -24,12 +24,15 @@ public class Usuario {
 	@Column(nullable = false, name = "data_nasc", columnDefinition = "DATE")
 	private LocalDate dataNasc;
 	
-	@Column(nullable = false, name = "email_pessoal", length = 30)
+	@Column(nullable = false, unique = true, name = "email_pessoal", length = 30)
 	private String emailPessoal;
 	
-	@Column(nullable = false, name = "email_corp", length = 30)
+	@Column(nullable = false, unique = true, name = "email_corp", length = 30)
 	private String emailCorp;	
 	
 	@Column(nullable = false, length = 20)
 	private String situacao;
+	
+	@Column(nullable = false, unique = true, length = 30)
+	private String senha;
 }

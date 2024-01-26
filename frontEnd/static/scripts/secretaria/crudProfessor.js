@@ -7,9 +7,6 @@ function selectAll() {
 
     fetch(url, configuracaoRequisicao)
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
-            }
             return response.json();
         })
         .then(data => {
@@ -45,8 +42,8 @@ function selectAll() {
             })
         })
         .catch(error => {
-            console.error('Erro:', error)
-        });
+            console.error(error)
+        })
 }
 
 function insert() {
@@ -64,9 +61,6 @@ function insert() {
         },
     })
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`)
-            }
             return response.json()
         })
         .then(data => {
@@ -76,6 +70,6 @@ function insert() {
             selectAll()
         })
         .catch(error => {
-            console.error('Erro:', error)
+            console.error(error)
         });
 }

@@ -21,10 +21,10 @@ public class DataService {
 		return dataRepository.findAll();
 	}
 	
-	public Data selectId(Long id) throws Exception {
+	public Data selectById(Long id) throws Exception {
 		Optional<Data> data = dataRepository.findById(id);
 		if (data.isEmpty()) {
-			throw new Exception("Curso não registrado");
+			throw new Exception("Data não registrado");
 		}
 
 		return data.get();

@@ -34,9 +34,9 @@ public class DataController {
 	}
 
 	@GetMapping("/{cod}")
-	public ResponseEntity<Object> getId(@PathVariable(value = "cod") Long cod) {
+	public ResponseEntity<Object> getId(@PathVariable("cod") Long cod) {
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(dataService.selectId(cod));
+			return ResponseEntity.status(HttpStatus.OK).body(dataService.selectById(cod));
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 		}

@@ -30,7 +30,8 @@ create table Usuario(
 	email_corp varchar(30) NOT NULL,
 	email_pessoal varchar(30) NOT NULL,
 	nome varchar(100) NOT NULL,
-	situacao varchar(20) NOT NULL
+	situacao varchar(20) NOT NULL,
+	senha varchar(30) NOT NULL
 )
 GO
 create table Professor(
@@ -60,6 +61,7 @@ create table Turma(
 	dia_da_semana varchar(20) NOT NULL,
 	horario_fim time(7) NOT NULL,
 	horario_inicio time(7) NOT NULL,
+	situacao varchar(20) NOT NULL,
 	cod_disciplina bigint NOT NULL,
 	cod_grade bigint NOT NULL,
 	cod_professor bigint NOT NULL

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.fatec.AGIS.dto.ProfessorDto;
@@ -35,7 +36,16 @@ public class ProfessorController {
 	@GetMapping("/{cod}")
 	public ResponseEntity<Object> getId(@PathVariable(value = "cod") Long cod) {
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(professorService.selectId(cod));
+			return ResponseEntity.status(HttpStatus.OK).body(professorService.selectById(cod));
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+	}
+	
+	@GetMapping("/login") // ESPECIE DE LOGIN PAIA PRA TESTES
+	public ResponseEntity<Object> getId(@RequestParam("cpf") String cpf, @RequestParam("senha") String senha) {
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(professorService.selectByCpfAndSenha(cpf, senha));
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 		}

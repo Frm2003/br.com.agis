@@ -77,6 +77,7 @@ function insert() {
             diaDaSemana: document.querySelector('[name="Dia da Semana"]').value,
             horarioInicio: document.querySelector('[name="Horario Início"]').value,
             horarioFim: document.querySelector('[name="Horario Fim"]').value,
+            situacao : 'aberta',
             codGradeCurricular: localStorage.getItem('codGrade')
         }),
         headers: {
@@ -112,6 +113,7 @@ function update() {
             diaDaSemana: document.querySelector('[name="Dia da Semana"]').value,
             horarioInicio: document.querySelector('[name="Horario Início"]').value,
             horarioFim: document.querySelector('[name="Horario Fim"]').value,
+            situacao : 'aberta',
             codGradeCurricular: localStorage.getItem('codGrade')
         }),
         headers: {

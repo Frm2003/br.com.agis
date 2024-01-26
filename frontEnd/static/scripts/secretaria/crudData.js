@@ -116,7 +116,7 @@ function insert() {
         })
         .catch(error => {
             console.error('Erro:', error)
-        });
+        })
 }
 
 function update() {
@@ -148,6 +148,5 @@ function update() {
         })
         .catch(error => {
             console.error('Erro:', error)
-        });
+        })
 }
-

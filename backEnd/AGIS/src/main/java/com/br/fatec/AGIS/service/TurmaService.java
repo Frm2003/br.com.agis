@@ -30,10 +30,14 @@ public class TurmaService {
 	@Autowired
 	private ProfessorRepository professorRepository;
 
-	public List<Turma> selectAllfromGrade(Long codGrade) {
-		return turmaRepository.selectAllfromGrade(codGrade);
+	public List<Turma> selectAllFromGrade(Long codGrade) {
+		return turmaRepository.selectAllFromGrade(codGrade);
 	}
-
+	
+	public List<Turma> selectAllFromProf(Long codProfessor) {
+		return turmaRepository.selectAllFromProf(codProfessor);
+	}
+	
 	public Turma selectById(Long cod) throws Exception {
 		Optional<Turma> turma = turmaRepository.findById(cod);
 
@@ -64,7 +68,6 @@ public class TurmaService {
 		}
 
 		var turmaModel = new Turma(turma.get(), turmaDto, disciplina.get(), professor.get());
-
 
 		return turmaRepository.save(turmaModel);
 	}

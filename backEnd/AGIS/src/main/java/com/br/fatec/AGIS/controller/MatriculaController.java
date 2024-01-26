@@ -26,9 +26,14 @@ public class MatriculaController {
 	@Autowired
 	private MatriculaService matriculaService;
 	
-	@GetMapping("/{ra}")
+	@GetMapping("/aluno/{ra}")
 	public ResponseEntity<List<Matricula>> getAllByRa(@PathVariable("ra") String ra) {
 		return ResponseEntity.status(HttpStatus.OK).body(matriculaService.selectAllByRa(ra));
+	}
+	
+	@GetMapping("/turma/{cod}")
+	public ResponseEntity<List<Matricula>> getAllByRa(@PathVariable("cod") Long codTurma) {
+		return ResponseEntity.status(HttpStatus.OK).body(matriculaService.selectAllByCodTurma(codTurma));
 	}
 	
 	@PatchMapping

@@ -37,6 +37,9 @@ public class Turma {
 	@Column(nullable = false, name = "dia_da_semana", length = 20)
 	private String diaDaSemana;
 	
+	@Column(nullable = false, length = 20)
+	private String situacao;
+	
 	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Disciplina.class, fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "cod_disciplina")
@@ -58,6 +61,7 @@ public class Turma {
 		this.diaDaSemana = turmaDto.diaDaSemana();
 		this.disciplina = disciplina;
 		this.professor = professor;
+		this.situacao = "aberta";
 		this.gradeCurricular = gradeCurricular;
 	}
 	
@@ -68,6 +72,7 @@ public class Turma {
 		this.diaDaSemana = turmaDto.diaDaSemana();
 		this.disciplina = disciplina;
 		this.professor = professor;
+		this.situacao = turmaDto.situacao();
 		this.gradeCurricular = turma.getGradeCurricular();
 	}
 
