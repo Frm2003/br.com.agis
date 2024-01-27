@@ -95,7 +95,7 @@ function insert() {
         mode: "cors",
         body: JSON.stringify({
             data : document.querySelector('input[name="data"]').value,
-            descricao : document.querySelector('input[name="descricao"]').value,
+            descricao : document.querySelector('[name="descricao"]').value,
             ehFeriado : document.querySelector('input[name="ehFeriado"]').checked
         }),
         headers: {

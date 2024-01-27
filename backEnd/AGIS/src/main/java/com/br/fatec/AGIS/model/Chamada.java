@@ -2,6 +2,7 @@ package com.br.fatec.AGIS.model;
 
 import java.time.LocalDate;
 
+import com.br.fatec.AGIS.dto.ChamadaDto;
 import com.br.fatec.AGIS.model.pk.ChamadaPk;
 
 import jakarta.persistence.CascadeType;
@@ -38,4 +39,13 @@ public class Chamada {
 	
 	@Column(nullable = false, name = "qtd_faltas")
 	private int qtdFaltas;
+
+	public Chamada(ChamadaDto chamadaDto, Turma turma, Aluno aluno) {
+		this.aluno = aluno;
+		this.turma = turma;
+		this.dataChamada = chamadaDto.data();
+		this.qtdFaltas = chamadaDto. qtdFaltas();
+	}
+	
+	
 }

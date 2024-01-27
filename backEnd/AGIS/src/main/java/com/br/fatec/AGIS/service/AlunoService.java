@@ -45,8 +45,10 @@ public class AlunoService {
 		user.setNome(alunoDto.nome());
 		user.setDataNasc(alunoDto.dataNasc());
 		user.setEmailPessoal(alunoDto.emailPessoal());
-		user.setEmailCorp("testeAluno");
+		user.setEmailCorp(geraEmailCorp(alunoDto.nome().trim()));
 		user.setSituacao("ativo");
+		user.setSenha(geraSenha());
+		alunoModel.setUsuario(user);
 		
 		alunoModel.setNomeSocial(alunoDto.nomeSocial());
 		alunoModel.setDataConc2grau(alunoDto.dataConc2grau());
@@ -59,7 +61,6 @@ public class AlunoService {
 		alunoModel.setDataLimiteMatricula(calcDataLimite());
 		
 		alunoModel.setCurso(curso.get());
-		alunoModel.setUsuario(user);
 
 		return alunoRepository.save(alunoModel);
 	}
@@ -102,6 +103,29 @@ public class AlunoService {
 		}
 		
 		return ra;
+	}
+	
+	private String geraSenha() {
+		String senha = "";
+		
+		for (int i = 0; i < 4; i++) {
+			int num = (int) (Math.random() * 10) + 1;
+			senha += num;
+		}
+		
+		return senha;
+	}
+	
+	private String geraEmailCorp(String nome) {
+		String email = nome;
+		
+		for (int i = 0; i < 4; i++) {
+			email += (int) (Math.random() * 10);
+		}	
+		
+		email += "@agis.com";
+		
+		return email.trim();
 	}
 	
 	private LocalDate calcDataLimite() {

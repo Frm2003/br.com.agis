@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Thu Jan 25 17:56:27 BRT 2024
+#Sat Jan 27 12:10:08 BRT 2024
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Felip\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-el\\10.1.17\\tomcat-embed-el-10.1.17.jar=WEB-INF/lib/tomcat-embed-el-10.1.17.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Felip\\.m2\\repository\\org\\springframework\\spring-web\\6.1.2\\spring-web-6.1.2.jar=WEB-INF/lib/spring-web-6.1.2.jar

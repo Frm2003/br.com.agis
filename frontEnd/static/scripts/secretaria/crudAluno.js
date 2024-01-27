@@ -26,6 +26,7 @@ function insert() {
             return response.json()
         })
         .then(data => {
+            limpaCampos()
             console.log(data)
         })
         .catch(error => {

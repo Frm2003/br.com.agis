@@ -1,0 +1,20 @@
+package com.br.fatec.AGIS.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.br.fatec.AGIS.model.Chamada;
+import com.br.fatec.AGIS.model.Turma;
+import com.br.fatec.AGIS.repository.ChamadaRepository;
+
+@Service
+public class ChamadaService {
+	@Autowired
+	private ChamadaRepository chamadaRepository;
+	
+	public Chamada insert() {
+		Optional<Turma> turma;
+	}
+}

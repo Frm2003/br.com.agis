@@ -1,25 +1,15 @@
 document.querySelector('.site').addEventListener('load', loadChamada())
 
+
 function loadChamada() {
     let codTurma = localStorage.getItem('codTurma')
-
     fetch(`http://localhost:8080/AGIS/turma/${codTurma}`)
         .then(response => {
             return response.json()
         })
         .then(turma => {
+            document.querySelector('.h2').innerHTML = `${turma.disciplina.nome}`
             calculaDias(turma.diaDaSemana)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-
-    fetch(`http://localhost:8080/AGIS/matricula/turma/${codTurma}`)
-        .then(response => {
-            return response.json()
-        })
-        .then(data => {
-
         })
         .catch(error => {
             console.log(error)
@@ -28,10 +18,10 @@ function loadChamada() {
 
 function calculaDias(diaDaSemana) {
     let dia = new Date(calculaChamada(localStorage.getItem('dataInicioAula'), diaDaSemana))
-    let overflow = document.querySelector('.overflow')
+    let overflow = document.querySelector('.grid .overflow')
 
     let html = ``
-    for (let aula = 0; aula < 20; aula++) {
+    for (let aula = 0; aula <= 20; aula++) {
         html += `
             <div class="cartao">
                 <div class="cardTitle">
@@ -43,7 +33,7 @@ function calculaDias(diaDaSemana) {
                     </div>
                 </div>
                 <div class="cardFooter" style="text-align: right; margin: .5em 0">
-                    <button class="btForm" onclick="realizarChamada('${dia.toDateString()}')">Chamada</button>
+                    <button class="btForm" onclick="realizarChamada('${dia}')">Chamada</button>
                 </div>
             </div>`
         dia.setDate(dia.getDate() + 7)
@@ -51,10 +41,43 @@ function calculaDias(diaDaSemana) {
     overflow.innerHTML = html
 }
 
-function realizarChamada(data) {
-    let dataDaChamada = new Date(data)
+function realizarChamada(dataChamada) {
+    let dia = new Date(dataChamada)
+    let codTurma = localStorage.getItem('codTurma')
 
-    if (dataDaChamada == new Date()) {
+    document.getElementById('popup').style.display = "block"
+
+    fetch(`http://localhost:8080/AGIS/matricula/turma/${codTurma}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            let tbody = document.querySelector('tbody')
+            let html = '';
+
+            data.forEach(matricula => {
+                html += `<tr>
+                    <td><div>${matricula.aluno.ra}</div></td>
+                    <td><div>${matricula.aluno.usuario.nome}</div></td>
+                    <td>
+                        <div>
+                            <select name="qtdFaltas">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td><div>${dia.getDate()}/${dia.getMonth() + 1}/${dia.getFullYear()}</div></td>
+                </tr>`
+            })
+            tbody.innerHTML = html
+        })
+        .catch(error => { console.log(error) })
+
+    if (dia >= new Date()) {
 
     } else {
         console.log('dia diferente')
@@ -89,3 +112,12 @@ function calculaChamada(data, diaDaSemana) {
 
     return dataInicio.setDate(dataInicio.getDate() + dif)
 }
+
+function insert() {
+    
+}
+
+document.querySelector('.popup i').addEventListener('click', function () {
+    let popup = document.getElementById('popup')
+    popup.style.display = "none"
+})

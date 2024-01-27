@@ -26,7 +26,7 @@ public class Professor{
 	private Long cod;
 	
 	@Column(nullable = false, length = 100)
-	protected String titulacao;
+	private String titulacao;
 	
 	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = Usuario.class, fetch = FetchType.LAZY)
